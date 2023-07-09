@@ -1,17 +1,17 @@
-<li>
+<div>
     <!-- {{i + 1}} -->
     <img [src]="book.imageSrc" alt="">
-    <p>
+    <p class="font-bold my-2">
         {{ book.name | titlecase }}
     </p>
-    <p>
+    <p class="my-2">
         {{ book.author }}
     </p>
 
-    <p>
-        {{book.price | currency:"BDT":"symbol-narrow"}}
+    <p class="my-2">
+        Price: <b>{{book.price | currency:"BDT":"symbol-narrow"}}</b>
     </p>
 
-    <button *ngIf="!isInCart" (click)="addToCart()" >add to cart</button>
-    <button *ngIf="isInCart" (click)="removeFromCart()" >remove from cart</button>
-</li>
+    <button *ngIf="!isInCart" (click)="addToCart()" class="bg-purple-900 px-4 py-2 text-white rounded-md">add to cart</button>
+    <button *ngIf="isInCart" (click)="removeFromCart()" class="bg-red-500 px-4 py-2 text-white rounded-md">remove from cart</button>
+</div>
