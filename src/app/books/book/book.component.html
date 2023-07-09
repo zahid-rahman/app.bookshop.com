@@ -1,0 +1,17 @@
+<li>
+    <!-- {{i + 1}} -->
+    <img [src]="book.imageSrc" alt="">
+    <p>
+        {{ book.name | titlecase }}
+    </p>
+    <p>
+        {{ book.author }}
+    </p>
+
+    <p>
+        {{book.price | currency:"BDT":"symbol-narrow"}}
+    </p>
+
+    <button *ngIf="!isInCart" (click)="addToCart()" >add to cart</button>
+    <button *ngIf="isInCart" (click)="removeFromCart()" >remove from cart</button>
+</li>
